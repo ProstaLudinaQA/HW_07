@@ -1,6 +1,7 @@
 package HW;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -23,8 +24,40 @@ public class Andrii_HW4 {
             System.out.println("Результат: " + result);
         } else {
             System.out.println("Неможливо виконати операцію.");
-        }
+
     }
+        List<String> inputData1 = Arrays.asList("5", "+", "5");
+        Integer result1 = 5 + 5;
+        String output1 = prepareResults(inputData1, result1);
+        System.out.println(output1); // 5 + 5 = 10
+
+        List<String> inputData2 = Arrays.asList("5", "-", "5");
+        Integer result2 = 5 - 5;
+        String output2 = prepareResults(inputData2, result2);
+        System.out.println(output2);
+    }
+
+    private static String prepareResults(List<String> inputData, Integer result) {
+        StringBuilder sb = new StringBuilder();
+
+
+        sb.append(inputData.get(0));
+
+        if (inputData.get(1).equals("+")) {
+            sb.append(" + ");
+        } else if (inputData.get(1).equals("-")) {
+            sb.append(" - ");
+        }
+
+        sb.append(inputData.get(2));
+
+        sb.append(" = ");
+
+        sb.append(result);
+
+        return sb.toString();
+    }
+
 
     // Функція для обчислення результату операції
     public static Integer calculate(List<String> inputList) {
@@ -82,4 +115,5 @@ public class Andrii_HW4 {
         }
     }
 }
+
 
